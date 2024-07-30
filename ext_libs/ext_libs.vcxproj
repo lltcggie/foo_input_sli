@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{10E6BFC6-1E5B-46E4-BA42-F04DFBD0ABFF}</ProjectGuid>
+    <RootNamespace>ext_libs</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <!--<CharacterSet>Unicode</CharacterSet>-->
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="PropertySheets">
+    <Import Project="..\vgmstream_msvc.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(Platform)'=='Win32'">
+    <CustomBuild Include="avcodec-vgmstream-59.def">
+      <Message>Building library stub</Message>
+      <Command>lib /def:avcodec-vgmstream-59.def /machine:x86 /out:avcodec.lib</Command>
+      <Outputs>avcodec.lib;avcodec.exp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="avformat-vgmstream-59.def">
+      <Message>Building library stub</Message>
+      <Command>lib /def:avformat-vgmstream-59.def /machine:x86 /out:avformat.lib</Command>
+      <Outputs>avformat.lib;avformat.exp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="avutil-vgmstream-57.def">
+      <Message>Building library stub</Message>
+      <Command>lib /def:avutil-vgmstream-57.def /machine:x86 /out:avutil.lib</Command>
+      <Outputs>avutil.lib;avutil.exp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Platform)'=='x64'">
+    <CustomBuild Include="avcodec-vgmstream-59.def">
+      <Message>Building library stub</Message>
+      <Command>lib /def:avcodec-vgmstream-59.def /machine:x64 /out:dll-x64\avcodec.lib</Command>
+      <Outputs>dll-x64\avcodec.lib;dll-x64\avcodec.exp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="avformat-vgmstream-59.def">
+      <Message>Building library stub</Message>
+      <Command>lib /def:avformat-vgmstream-59.def /machine:x64 /out:dll-x64\avformat.lib</Command>
+      <Outputs>dll-x64\avformat.lib;dll-x64\avformat.exp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="avutil-vgmstream-57.def">
+      <Message>Building library stub</Message>
+      <Command>lib /def:avutil-vgmstream-57.def /machine:x64 /out:dll-x64\avutil.lib</Command>
+      <Outputs>dll-x64\avutil.lib;dll-x64\avutil.exp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

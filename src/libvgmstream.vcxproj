@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{54A6AD11-5369-4895-A06F-E255ABB99B11}</ProjectGuid>
+    <RootNamespace>libvgmstream</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <!--<CharacterSet>Unicode</CharacterSet>-->
+    <!-- affects WinAPi *A/*W functions -->
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="PropertySheets">
+    <Import Project="..\vgmstream_msvc.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(VLibAdditionalIncludeDirectories);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;$(VLibPreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(VLibAdditionalIncludeDirectories);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;$(VLibPreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(VLibAdditionalIncludeDirectories);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WIN32_WINNT=0x501;WIN32;NDEBUG;_LIB;$(VLibPreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(VLibAdditionalIncludeDirectories);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WIN32_WINNT=0x501;WIN32;NDEBUG;_LIB;$(VLibPreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="api.h" />
+    <ClInclude Include="libvgmstream.h" />
+    <ClInclude Include="libvgmstream_streamfile.h" />
+    <ClInclude Include="streamfile.h" />
+    <ClInclude Include="streamtypes.h" />
+    <ClInclude Include="util.h" />
+    <ClInclude Include="vgmstream.h" />
+    <ClInclude Include="vgmstream_init.h" />
+    <ClInclude Include="vgmstream_types.h" />
+    <ClInclude Include="base\api_internal.h" />
+    <ClInclude Include="base\decode.h" />
+    <ClInclude Include="base\mixer.h" />
+    <ClInclude Include="base\mixer_priv.h" />
+    <ClInclude Include="base\mixing.h" />
+    <ClInclude Include="base\plugins.h" />
+    <ClInclude Include="base\render.h" />
+    <ClInclude Include="base\sbuf.h" />
+    <ClInclude Include="coding\coding.h" />
+    <ClInclude Include="layout\layout.h" />
+    <ClInclude Include="meta\meta.h" />
+    <ClInclude Include="util\log.h" />
+    <ClInclude Include="util\paths.h" />
+    <ClInclude Include="util\reader_get.h" />
+    <ClInclude Include="util\reader_put.h" />
+    <ClInclude Include="util\reader_sf.h" />
+    <ClInclude Include="util\reader_text.h" />
+    <ClInclude Include="util\sf_utils.h" />
+    <ClInclude Include="util\vgmstream_limits.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="formats.c" />
+    <ClCompile Include="streamfile.c" />
+    <ClCompile Include="util.c" />
+    <ClCompile Include="vgmstream.c" />
+    <ClCompile Include="vgmstream_init.c" />
+    <ClCompile Include="base\api_decode_base.c" />
+    <ClCompile Include="base\api_decode_open.c" />
+    <ClCompile Include="base\api_decode_play.c" />
+    <ClCompile Include="base\api_helpers.c" />
+    <ClCompile Include="base\api_libsf.c" />
+    <ClCompile Include="base\api_tags.c" />
+    <ClCompile Include="base\config.c" />
+    <ClCompile Include="base\decode.c" />
+    <ClCompile Include="base\info.c" />
+    <ClCompile Include="base\mixer.c" />
+    <ClCompile Include="base\mixer_ops_common.c" />
+    <ClCompile Include="base\mixer_ops_fade.c" />
+    <ClCompile Include="base\mixing.c" />
+    <ClCompile Include="base\mixing_commands.c" />
+    <ClCompile Include="base\mixing_macros.c" />
+    <ClCompile Include="base\plugins.c" />
+    <ClCompile Include="base\render.c" />
+    <ClCompile Include="base\seek.c" />
+    <ClCompile Include="base\streamfile_api.c" />
+    <ClCompile Include="base\streamfile_buffer.c" />
+    <ClCompile Include="base\streamfile_clamp.c" />
+    <ClCompile Include="base\streamfile_fakename.c" />
+    <ClCompile Include="base\streamfile_io.c" />
+    <ClCompile Include="base\streamfile_multifile.c" />
+    <ClCompile Include="base\streamfile_stdio.c" />
+    <ClCompile Include="base\streamfile_wrap.c" />
+    <ClCompile Include="base\tags.c" />
+    <ClCompile Include="coding\ffmpeg_decoder.c" />
+    <ClCompile Include="coding\ffmpeg_decoder_utils.c" />
+    <ClCompile Include="layout\flat.c" />
+    <ClCompile Include="meta\ffmpeg.c" />
+    <ClCompile Include="meta\sli.c" />
+    <ClCompile Include="util\log.c" />
+    <ClCompile Include="util\paths.c" />
+    <ClCompile Include="util\reader.c" />
+    <ClCompile Include="util\sf_utils.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

@@ -1,1 +1,2 @@
 # foo_input_sli
+vgmstreamをベースにffmpegを使って様々な音楽ファイルをsliでループ再生するfoobar2000のプラグイン
